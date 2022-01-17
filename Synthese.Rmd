@@ -1,0 +1,30 @@
+---
+output: 
+  pdf_document:
+    pandoc_args: "--highlight=pygments"
+    includes:
+      in_header: include/preambule1.tex
+      before_body: include/title_page1.tex
+---
+
+
+\section{Introduction}
+
+```{=latex}
+\section*{Introduction}
+\section{Analyse de données}
+Analyse en composantes principales
+\section{Deep Learning}
+Les réseaux de neuronnes
+\subsection{Les réseaux convolutionnelles}
+```
+
+```{r, message=FALSE}
+library(dplyr)
+library(tidyverse)
+library(FactoMineR)
+library(missMDA)
+library(caret)
+```
+
+

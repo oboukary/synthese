@@ -1,0 +1,123 @@
+%-------------------------------------------------------------------------------
+%                  IMPORT OF ALL NEEDED PACKAGES
+%-------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+%\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+%\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref} 
+\usepackage[T1]{fontenc} % Font encoding
+\usepackage{graphicx}
+\graphicspath{{Images/}}
+\usepackage{eso-pic} 
+\usepackage{subfig} 
+\usepackage{caption} 
+\usepackage{transparent}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage[overload]{empheq}  
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{cleveref}
+\usepackage[square, numbers, sort&compress]{natbib} 
+\bibliographystyle{plain} 
+\usepackage{appendix}
+\usepackage{enumitem}
+\usepackage{amsthm,thmtools}
+%\usepackage[table]{xcolor}
+\usepackage{comment} % Comment part of code
+\usepackage{fancyhdr} % Fancy headers and footers
+\usepackage{tcolorbox} 
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots,tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,fit}
+\usepackage{enumitem}  
+\usepackage[normalem]{ulem}
+%fonts change 
+\usepackage[charter]{mathdesign}
+\tcbuselibrary{skins,breakable,xparse}
+\usepackage{shadowtext}
+\usepackage[explicit]{titlesec}
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{forest}
+\usepackage{pdfpages}
+\pagestyle{fancy}
+\definecolor{fgcolor}{rgb}{0.87, 0.36, 0.51}
+\definecolor{bluePoli}{cmyk}{0.4,0.1,0,0.4}
+\definecolor{bluePoli}{rgb}{0.87, 0.36, 0.51}
+\definecolor{babyblueeyes}{rgb}{0.63, 0.79, 0.95}
+\definecolor{blush}{rgb}{0.87, 0.36, 0.51}
+\definecolor{bubblegum}{rgb}{0.99, 0.76, 0.8}
+\definecolor{charcoal}{rgb}{0.21, 0.27, 0.31}
+
+\captionsetup[figure]{labelfont={color=bluePoli}} % Set colour of the captions
+\captionsetup[table]{labelfont={color=bluePoli}} % Set colour of the captions
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+% Custom itemize environment
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=$\circ$}
+\setlist[itemize,3]{label=$-$}
+\setlist{nosep}
+
+% Create command for background pic
+\newcommand\BackgroundPic{% Adding background picture
+	\put(237,365){
+
+		}
+}
+
+% Set indentation
+\setlength\parindent{0pt}
+
+% Custom title commands
+%\titleformat{\section}
+%{\color{bluePoli}\normalfont\Large\bfseries}
+%{\color{bluePoli}\thesection.}{1em}{}
+%\titleformat{\section}
+%{\color{bluePoli}\normalfont\Large\bfseries}{\color{bluePoli}\thesection.}{1.mm}{}
+\renewcommand*\thesection{\arabic{section}}
+\usepackage[explicit]{titlesec}
+\titleformat{\section}[hang]{\Large\bfseries\sffamily}%
+{\rlap{\color{bluePoli}\rule[-7.5pt]{\textwidth}{1.2pt}}\colorbox{bluePoli}{%
+           \raisebox{0pt}[8pt][3pt]{ \makebox[10pt]{% height, width
+                \fontfamily{phv}\selectfont\color{white}{\thesection.}}
+            }}}%
+{15pt}%
+{ \color{bluePoli}#1
+%
+}
+\titlespacing*{\section}
+{0pt}{3.3ex}{3.3ex}
+% Custom headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+      
+\fancyfoot{}
+\fancyfoot[C]{\thepage} % page
+\renewcommand{\headrulewidth}{0mm} % headrule width
+\renewcommand{\footrulewidth}{0mm} % footrule width
+
+\makeatletter
+\patchcmd{\headrule}{\hrule}{\color{black}\hrule}{}{} % headrule
+\patchcmd{\footrule}{\hrule}{\color{black}\hrule}{}{} % footrule
+\makeatother
+% -> MSc course
+\newcommand{\course}{STA211}
+\newcommand{\advisor}{Mme Niang}
+% IF AND ONLY IF you need to modify the co-supervisors you also have to modify the file Configuration_files/title_page.tex (ONLY where it is marked)
+\newcommand{\firstcoadvisor}{Name Surname} % insert if any otherwise comment
+\newcommand{\secondcoadvisor}{Name Surname} % insert if any otherwise comment
+% -> author ID
+\newcommand{\ID}{Student ID}
+% -> academic year
+\newcommand{\YEAR}{2021-2022}
+% -> abstract (only in English)
+
+
+% -> key-words (only in English)
+\newcommand{\keywords}{Analyse statistique des données, Statistique décisionnelle, Data mining, Base de données, fouille de donnees}
+

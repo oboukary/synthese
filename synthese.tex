@@ -1,0 +1,142 @@
+%-------------------------------------------------------------------------------
+%  AUTEUR : Boukary OUEDRAOGO
+%  SUJET  : Synthèse de cours Entreposage et fouille de données
+%  DATE DE CREATION : 23/12/2021
+%-------------------------------------------------------------------------------
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0, 0, 0}}}
+\makeatother
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.69,0.494,0}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.749,0.012,0.012}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.514,0.506,0.514}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0,0.341,0.682}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.004,0.004,0.506}{#1}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+}}
+\makeatother
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\input{include/preambule}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\input{include/title_page}
+\section{Définition et contexte d'émergence du data mining}
+\subsection{Définition}
+Il n'est pas aisé de trouver une définition exacte et claire associé au \textit{data mining}.
+Ce que l'on peut retenir c'est le \textit{data mining} désigne un ensemble de méthodes à l'intersection entre plusieurs disciplines (statistiques, intelligence artificielle, informatique,...) permettant d'explorer et d'analyser de grandes bases de données en vue d'extraire des informations utiles.
+
+\par Dans le langage courant, on confond souvent les termes \textit{big data} et \textit{data mining}. Ces deux termes désignent pourtant des choses différentes. 
+Le\textit{big data} renvoie à une quantité importante de données. Quand au \textit{data mining}, il désigne l'utilisation des techniques diverses pour extraire de ces énormes quantités de données (big data), de la connaissance utile permettant de tirer un avantage comparative.
+\par A partir de quand parle t'on de big data? On parlera de big data quand les techniques traditionnelles de traitement des données ne sont plus opérantes sur les données. Le big data ne se résume pas seulement au seul aspect volumétrie. En effet, le volume est un aspect relatif. En effet avec l'amélioration de capacité de stockage, des données jadis considérées comme volumineuses deviennent moins problèmatiques pour les entreprises.
+Le big data est souvent caractérisé par ce qu'on appelle les \textbf{3V}.
+Les 3V font référence aux trois aspects suivants: volume, vitesse, variété.
+\begin{itemize}
+\item \textbf{Le volume} désigne la quantité de données astronomiques générées.
+\item \textbf{La vitesse} est la rapidité à laquelle les données sont générées, stockées, transformées et exploitées.
+\item \textbf{La variété} fait référence à la diversité des sources de données et leurs types (données structurées, données non-structurées).  Les données prennent le plus souvent des formes très variées et très hétérogènes (son, images, vidéos,textes, etc.)
+\end{itemize}
+Aux 3V ci-dessus, certains y adjoignent deux autres V pour en faire 5. Ces 2V additionnels sont:
+\begin{itemize}
+\item La valeur: La valeur désigne la valeur ajoutée 
+\item la véracité fait référence à la fiabilité des données 
+\end{itemize}
+\subsection{Dans quel contexte émergent le data mining?}
+Les raisons du succès du data mining s'explique principalement par deux facteurs:
+\begin{itemize}
+\item L'environnement concurrentiel: La mondialisation a intensifié la concurrence entre les entreprises et saturé les marché. Dans ce environnement de plus en plus concurrentiel le client devient l'acteur principal de l'entreprise. Cela fait naître chez les entreprises le besoin de mieux connaître leurs clients.
+\item L'état de l'entreprise: Le développement des systèmes d'informations a entraîné une réduction des coûts de stockages et augmentation des puissances de calcul permettant aux entreprises de stocker et d'exploiter des quantités gigantesques de données.
+Avec la concurrence et la disponibilité des données, le besoin de transformer les données d'entreprises en connaissance s'est fait sentir.
+Avant toute démarche de data mining il faut être capable de poser de manière clair le problème business auquel on souhaite répondre. Est ce que les données disponibles permettent de répondre à la question qu'on se pose.
+
+Il existe deux types de data mining.
+Data mining de vérification et data mining de découverte.
+\end{itemize}
+
+\section{Analyse de données}
+\subsection{Analyse en composantes principales}
+
+\subsection{Analyse factorielle des correspondances}
+
+\subsection{Analyse des correspondances multiples}
+
+
+\subsection{Analyse factorielles mixtes}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(dplyr)}
+\hlkwd{library}\hlstd{(tidyverse)}
+\hlkwd{library}\hlstd{(FactoMineR)}
+\hlkwd{library}\hlstd{(missMDA)}
+\hlkwd{library}\hlstd{(caret)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.878, 0.918, 0.933}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
+\end{knitrout}
+
+
+
+
+\section{SVM}
+Les supports vecteurs machines
+\section{Business intelligence avec BO}
+
+\bibliography{bibliography.bib}
+
+\end{document}
